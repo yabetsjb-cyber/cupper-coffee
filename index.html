@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cupper Coffee — Exceptional specialty coffee, ethically sourced and freshly roasted. Order online or visit our café.">
+  <title>Cupper Coffee — Specialty Coffee, Roasted Fresh</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg">
+      <div style="width:100%;height:100%;background:linear-gradient(135deg, #1a1108 0%, #2c1a0e 30%, #0f0d0b 100%);"></div>
+    </div>
+    <div class="container">
+      <div class="hero-content">
+        <span class="section-label">Est. 2018 — Specialty Coffee</span>
+        <h1>Crafted with Passion,<br>Brewed to <em>Perfection</em></h1>
+        <p>From the lush highlands of Ethiopia to your cup — we source, roast, and deliver the world's finest single-origin coffees. Every bean tells a story.</p>
+        <div class="hero-buttons">
+          <a href="products.html" class="btn btn-primary">☕ Order Now</a>
+          <a href="about.html" class="btn btn-secondary">Our Story →</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <h3>12+</h3>
+            <p>Coffee Origins</p>
+          </div>
+          <div class="hero-stat">
+            <h3>50K+</h3>
+            <p>Cups Served</p>
+          </div>
+          <div class="hero-stat">
+            <h3>4.9★</h3>
+            <p>Customer Rating</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-decor">☕</div>
+  </section>
+
+  <!-- ABOUT SNIPPET -->
+  <section class="section" style="background: var(--color-bg-alt);">
+    <div class="container">
+      <div class="about-story animate-on-scroll">
+        <div class="about-story-img" style="background: linear-gradient(135deg, #2c1a0e, #1a1714); display:flex; align-items:center; justify-content:center; font-size:6rem;">
+          👨‍🍳
+        </div>
+        <div class="about-story-content">
+          <span class="section-label">Who We Are</span>
+          <h2>Meet the Roaster Behind the Beans</h2>
+          <p>Hi, I'm Daniel — a former software engineer turned specialty coffee roaster. After a life-changing trip to the coffee farms of Ethiopia in 2017, I fell in love with the art and science of coffee.</p>
+          <p>Cupper was born from a simple belief: everyone deserves access to ethically sourced, freshly roasted, exceptional coffee — without the pretension.</p>
+          <a href="about.html" class="btn btn-secondary" style="margin-top:1rem;">Read Our Full Story →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <span class="section-label">Why Cupper</span>
+        <h2>Coffee You Can Trust</h2>
+        <p>We obsess over every detail so you can just enjoy the coffee.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card animate-on-scroll">
+          <div class="feature-icon">🌱</div>
+          <h3>Ethically Sourced</h3>
+          <p>Direct trade relationships with farmers in Ethiopia, Colombia, and Sumatra. Fair prices, sustainable practices.</p>
+        </div>
+        <div class="feature-card animate-on-scroll">
+          <div class="feature-icon">🔥</div>
+          <h3>Freshly Roasted</h3>
+          <p>Small-batch roasted to order. Your coffee is never more than 48 hours from the roaster when it ships.</p>
+        </div>
+        <div class="feature-card animate-on-scroll">
+          <div class="feature-icon">🚀</div>
+          <h3>Fast Delivery</h3>
+          <p>Free shipping on orders over $35. Express options available. From our roastery to your doorstep in 2-4 days.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED PRODUCTS -->
+  <section class="section" style="background: var(--color-bg-alt);">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <span class="section-label">Featured Collection</span>
+        <h2>Our Best-Selling Coffees</h2>
+        <p>Curated favorites loved by thousands of coffee enthusiasts.</p>
+      </div>
+      <div class="products-grid" id="featured-products">
+        <!-- Filled by JS below -->
+      </div>
+      <div style="text-align:center; margin-top:2.5rem;" class="animate-on-scroll">
+        <a href="products.html" class="btn btn-secondary">Browse All Products →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CUSTOMER REVIEWS -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <span class="section-label">Testimonials</span>
+        <h2>What Our Customers Say</h2>
+        <p>Real reviews from real coffee lovers.</p>
+      </div>
+      <div class="reviews-grid" id="home-reviews">
+        <!-- Filled by JS below -->
+      </div>
+      <div style="text-align:center; margin-top:2.5rem;" class="animate-on-scroll">
+        <a href="reviews.html" class="btn btn-secondary">Read All Reviews →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="section">
+    <div class="container">
+      <div class="cta-banner animate-on-scroll">
+        <span class="section-label">Ready to Try?</span>
+        <h2>Your Perfect Cup Awaits</h2>
+        <p>Join 10,000+ coffee lovers who start their mornings with Cupper. Order now and taste the difference.</p>
+        <div class="cta-buttons">
+          <a href="products.html" class="btn btn-primary">☕ Shop Now</a>
+          <a href="about.html#contact" class="btn btn-secondary">📍 Visit Us</a>
+          <a href="about.html#contact" class="btn btn-secondary">✉️ Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Featured Products (subset)
+    const FEATURED = [
+      {
+        id: 'bean-01', name: 'Ethiopian Yirgacheffe', category: 'beans',
+        price: 18.99, badge: 'Best Seller',
+        description: 'Bright and complex with notes of jasmine, lemon, and bergamot. Single-origin light roast.'
+      },
+      {
+        id: 'ground-01', name: 'Morning Ritual Blend', category: 'ground',
+        price: 13.99, badge: 'Popular',
+        description: 'Medium-grind blend optimized for drip brewers. Bold, bright, and energizing.'
+      },
+      {
+        id: 'drink-01', name: 'Classic Cold Brew', category: 'drinks',
+        price: 5.99, badge: 'Seasonal',
+        description: 'Slow-steeped for 18 hours. Smooth, refreshing, and naturally sweet. Ready to drink.'
+      },
+      {
+        id: 'acc-02', name: 'Cupper Travel Mug', category: 'accessories',
+        price: 24.99, badge: 'New',
+        description: 'Double-walled stainless steel. Keeps coffee hot for 8 hours. Matte black finish.'
+      },
+    ];
+
+    const catEmoji = { beans: '🫘', ground: '☕', drinks: '🥤', accessories: '⚙️' };
+
+    document.addEventListener('DOMContentLoaded', () => {
+      // Render featured products
+      const grid = document.getElementById('featured-products');
+      if (grid) {
+        grid.innerHTML = FEATURED.map(p => `
+          <div class="card product-card animate-on-scroll">
+            <div style="position:relative;">
+              <div class="card-img" style="background:linear-gradient(135deg,#2e2924,#1a1714);display:flex;align-items:center;justify-content:center;font-size:3rem;">
+                ${catEmoji[p.category] || '☕'}
+              </div>
+              ${p.badge ? `<span class="product-badge">${p.badge}</span>` : ''}
+            </div>
+            <div class="card-body">
+              <h3>${p.name}</h3>
+              <p>${p.description}</p>
+              <div class="card-footer">
+                <span class="card-price">$${p.price.toFixed(2)}</span>
+                <button class="btn btn-primary btn-sm" onclick="addToCart(${JSON.stringify(p).replace(/"/g, '&quot;')})">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      // Render home reviews
+      const reviews = [
+        { name: 'Sarah M.', initials: 'SM', rating: 5, date: 'May 2026', text: 'The Ethiopian Yirgacheffe is hands down the best coffee I\'ve ever had. Cupper has turned me into a coffee snob!' },
+        { name: 'James R.', initials: 'JR', rating: 5, date: 'April 2026', text: 'Ordered the House Blend and the Pour-Over Dripper — the quality is outstanding. Will be ordering again!' },
+        { name: 'Marcus D.', initials: 'MD', rating: 5, date: 'March 2026', text: 'I visited the café and was blown away. The atmosphere is cozy, the latte art is beautiful. 10/10!' },
+      ];
+
+      const revGrid = document.getElementById('home-reviews');
+      if (revGrid) {
+        revGrid.innerHTML = reviews.map(r => `
+          <div class="review-card animate-on-scroll">
+            <div class="review-stars">${'★'.repeat(r.rating)}${'☆'.repeat(5 - r.rating)}</div>
+            <p class="review-text">"${r.text}"</p>
+            <div class="review-author">
+              <div class="review-avatar">${r.initials}</div>
+              <div class="review-author-info">
+                <h4>${r.name}</h4>
+                <p>${r.date}</p>
+              </div>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      initScrollAnimations();
+    });
+  </script>
+</body>
+</html>

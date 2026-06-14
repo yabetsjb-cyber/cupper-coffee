@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Cupper Coffee Blog — Brewing guides, coffee origins, equipment reviews, and new product announcements.">
+    <title>Blog — Cupper Coffee</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+        <span class="section-label">The Coffee Journal</span>
+        <h1>Blog</h1>
+        <p>Brewing tips, origin stories, equipment reviews, and coffee culture.</p>
+    </section>
+
+    <!-- BLOG POSTS -->
+    <section class="section">
+        <div class="container">
+
+            <!-- Filter Tags -->
+            <div class="filter-tabs" style="margin-bottom: 3rem;">
+                <button class="filter-tab active" onclick="filterBlog('all', this)">All Posts</button>
+                <button class="filter-tab" onclick="filterBlog('brewing', this)">☕ Brewing Guides</button>
+                <button class="filter-tab" onclick="filterBlog('origins', this)">🌍 Coffee Origins</button>
+                <button class="filter-tab" onclick="filterBlog('equipment', this)">⚙️ Equipment</button>
+                <button class="filter-tab" onclick="filterBlog('news', this)">📢 Announcements</button>
+            </div>
+
+            <div class="blog-grid" id="blog-grid">
+                <!-- Rendered by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- NEWSLETTER CTA -->
+    <section class="section" style="background: var(--color-bg-alt);">
+        <div class="container">
+            <div class="cta-banner animate-on-scroll">
+                <span class="section-label">Stay Updated</span>
+                <h2>Subscribe to Our Newsletter</h2>
+                <p>Get brewing tips, exclusive offers, and new product announcements straight to your inbox.</p>
+                <div style="display:flex; gap:0.75rem; max-width:460px; margin:0 auto; position:relative;">
+                    <input type="email" placeholder="your@email.com" style="
+            flex:1; padding:0.85rem 1.2rem; background:var(--color-surface); border:1px solid var(--color-border);
+            border-radius:var(--radius-md); color:var(--color-text); font-family:var(--font-body); font-size:0.92rem;
+          ">
+                    <button class="btn btn-primary" onclick="showToast('Thanks for subscribing! ☕')">Subscribe</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/main.js"></script>
+    <script>
+        const BLOG_POSTS = [
+            {
+                category: 'brewing',
+                tag: 'Brewing Guide',
+                date: 'June 10, 2026',
+                title: 'The Perfect Pour-Over: A Step-by-Step Guide',
+                excerpt: 'Master the art of pour-over brewing with our detailed guide. Learn about water temperature, grind size, bloom time, and pouring technique for a clean, flavorful cup every time.',
+                emoji: '☕'
+            },
+            {
+                category: 'origins',
+                tag: 'Coffee Origins',
+                date: 'June 3, 2026',
+                title: 'Ethiopia: The Birthplace of Coffee',
+                excerpt: 'Journey to the highlands of Yirgacheffe and Sidamo, where coffee was first discovered. Learn how altitude, soil, and tradition create some of the world\'s most complex and sought-after beans.',
+                emoji: '🌍'
+            },
+            {
+                category: 'equipment',
+                tag: 'Equipment Review',
+                date: 'May 28, 2026',
+                title: 'Best Manual Grinders Under $50 in 2026',
+                excerpt: 'We tested 8 popular manual burr grinders for consistency, build quality, and ease of use. Here are our top picks for home brewing on a budget — including our own Cupper grinder.',
+                emoji: '⚙️'
+            },
+            {
+                category: 'news',
+                tag: 'Announcement',
+                date: 'May 20, 2026',
+                title: 'New Arrival: Sumatra Mandheling Dark Roast',
+                excerpt: 'We\'re thrilled to introduce our latest single-origin offering — a full-bodied, earthy Sumatra with herbal notes and a syrupy finish. Available now in whole bean and ground.',
+                emoji: '📢'
+            },
+            {
+                category: 'brewing',
+                tag: 'Brewing Guide',
+                date: 'May 15, 2026',
+                title: 'Cold Brew vs. Iced Coffee: What\'s the Difference?',
+                excerpt: 'They may look similar, but cold brew and iced coffee are fundamentally different. We break down the brewing methods, flavor profiles, and when to choose each one.',
+                emoji: '🧊'
+            },
+            {
+                category: 'origins',
+                tag: 'Coffee Origins',
+                date: 'May 8, 2026',
+                title: 'The Colombian Coffee Triangle: A Tasting Tour',
+                excerpt: 'From the rolling hills of Huila to the misty peaks of Nariño, Colombian coffee is as diverse as the landscape. Here\'s what makes each region unique.',
+                emoji: '🇨🇴'
+            },
+            {
+                category: 'equipment',
+                tag: 'Equipment Review',
+                date: 'April 22, 2026',
+                title: 'French Press vs. AeroPress: Which Should You Choose?',
+                excerpt: 'Two beloved brew methods, two very different cups. We compare flavor, body, ease of cleaning, portability, and cost to help you pick the right one.',
+                emoji: '🔬'
+            },
+            {
+                category: 'news',
+                tag: 'Announcement',
+                date: 'April 10, 2026',
+                title: 'Cupper Travel Mug: Now Available',
+                excerpt: 'Our brand-new double-walled stainless steel travel mug keeps your coffee hot for 8 hours. Sleek matte black finish, leak-proof lid, and fits all standard cup holders.',
+                emoji: '🏷️'
+            },
+        ];
+
+        function renderBlog(filter = 'all') {
+            const grid = document.getElementById('blog-grid');
+            const filtered = filter === 'all' ? BLOG_POSTS : BLOG_POSTS.filter(p => p.category === filter);
+
+            grid.innerHTML = filtered.map(post => `
+        <div class="card blog-card animate-on-scroll" data-category="${post.category}">
+          <div class="card-img" style="background:linear-gradient(135deg,#2e2924,#1a1714);display:flex;align-items:center;justify-content:center;font-size:3.5rem;">
+            ${post.emoji}
+          </div>
+          <div class="card-body">
+            <div class="blog-meta">
+              <span class="blog-tag">${post.tag}</span>
+              <span>${post.date}</span>
+            </div>
+            <h3>${post.title}</h3>
+            <p class="blog-excerpt">${post.excerpt}</p>
+            <a href="#" class="read-more" onclick="event.preventDefault(); showToast('Full blog posts coming soon!')">Read More →</a>
+          </div>
+        </div>
+      `).join('');
+
+            initScrollAnimations();
+        }
+
+        function filterBlog(category, btn) {
+            document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+            btn.classList.add('active');
+            renderBlog(category);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => renderBlog());
+    </script>
+</body>
+
+</html>

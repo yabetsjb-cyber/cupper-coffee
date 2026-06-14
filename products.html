@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Browse Cupper Coffee's collection — specialty coffee beans, ground coffee, drinks, and accessories. Order online.">
+    <title>Products — Cupper Coffee</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+        <span class="section-label">Our Collection</span>
+        <h1>Products</h1>
+        <p>From single-origin beans to brewing accessories — everything you need for the perfect cup.</p>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section class="section">
+        <div class="container">
+            <!-- Filter Tabs -->
+            <div class="filter-tabs">
+                <button class="filter-tab active" data-filter="all">All Products</button>
+                <button class="filter-tab" data-filter="beans">☕ Coffee Beans</button>
+                <button class="filter-tab" data-filter="ground">⚡ Ground Coffee</button>
+                <button class="filter-tab" data-filter="drinks">🥤 Drinks</button>
+                <button class="filter-tab" data-filter="accessories">⚙️ Accessories</button>
+            </div>
+
+            <!-- Product Grid -->
+            <div class="products-grid" id="products-grid">
+                <!-- Rendered by products.js -->
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section" style="background: var(--color-bg-alt);">
+        <div class="container">
+            <div class="cta-banner animate-on-scroll">
+                <span class="section-label">Can't Decide?</span>
+                <h2>Try Our Starter Pack</h2>
+                <p>Get a curated selection of our top 3 coffees at a special price. Perfect for discovering your new
+                    favorite.</p>
+                <div class="cta-buttons">
+                    <a href="order.html" class="btn btn-primary">🛒 View Cart</a>
+                    <a href="about.html#contact" class="btn btn-secondary">📞 Ask Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/main.js"></script>
+    <script src="js/products.js"></script>
+</body>
+
+</html>
