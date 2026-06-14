@@ -58,3 +58,4 @@ The website is currently a pure frontend implementation built to be easily hooke
 - To create a new component that fits the theme, use the `.card` class which automatically applies our glassmorphism backdrop (`var(--glass-bg)`).
 - Buttons: `.btn-primary` (Gold gradient) or `.btn-secondary` (Outline).
 # cupper-coffee
+# cupper-coffee
