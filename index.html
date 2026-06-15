@@ -1,27 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Cupper Coffee — Exceptional specialty coffee, ethically sourced and freshly roasted. Order online or visit our café.">
+  <meta name="description"
+    content="Cupper Coffee — Exceptional specialty coffee, ethically sourced and freshly roasted. Order online or visit our café.">
   <title>Cupper Coffee — Specialty Coffee, Roasted Fresh</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
   <!-- HERO -->
   <section class="hero">
     <div class="hero-bg">
-      <div style="width:100%;height:100%;background:linear-gradient(135deg, #1a1108 0%, #2c1a0e 30%, #0f0d0b 100%);"></div>
+      <div style="width:100%;height:100%;background:linear-gradient(135deg, #1a1108 0%, #2c1a0e 30%, #0f0d0b 100%);">
+      </div>
     </div>
     <div class="container">
       <div class="hero-content">
         <span class="section-label">Specially Crafted Coffee</span>
         <h1>Exceptional Coffee,<br>Freshly Roasted</h1>
-        <p>Expertly sourced beans from Ethiopia, roasted in small batches to bring out the perfect flavor in every cup.</p>
+        <p>Expertly sourced beans from Ethiopia, roasted in small batches to bring out the perfect flavor in every cup.
+        </p>
         <div class="hero-buttons">
           <a href="products.html" class="btn btn-primary">☕ Shop Coffee</a>
-          <a href="#contact" class="btn btn-secondary">Contact Us</a>
+          <a href="about.html#contact" class="btn btn-secondary">Contact Us</a>
         </div>
       </div>
     </div>
@@ -40,7 +45,8 @@
         <div class="feature-card animate-on-scroll">
           <div class="feature-icon">🌱</div>
           <h3>Ethically Sourced</h3>
-          <p>Direct trade relationships with farmers in Ethiopia, Colombia, and Sumatra. Fair prices, sustainable practices.</p>
+          <p>Direct trade relationships with farmers in Ethiopia, Colombia, and Sumatra. Fair prices, sustainable
+            practices.</p>
         </div>
         <div class="feature-card animate-on-scroll">
           <div class="feature-icon">🔥</div>
@@ -50,42 +56,8 @@
         <div class="feature-card animate-on-scroll">
           <div class="feature-icon">🚀</div>
           <h3>Fast Delivery</h3>
-          <p>Free shipping on orders over $35. Express options available. From our roastery to your doorstep in 2-4 days.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FEATURED PRODUCTS -->
-  <section class="section" style="background: var(--color-bg-alt);">
-    <div class="container">
-      <div class="section-header animate-on-scroll">
-        <span class="section-label">Featured Collection</span>
-        <h2>Our Best-Selling Coffees</h2>
-        <p>Curated favorites loved by thousands of coffee enthusiasts.</p>
-      </div>
-      <div class="products-grid" id="featured-products">
-        <!-- Filled by JS below -->
-      </div>
-      <div style="text-align:center; margin-top:2.5rem;" class="animate-on-scroll">
-        <a href="products.html" class="btn btn-secondary">Shop All Products</a>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- CONTACT SECION (anchor) -->
-  <div id="contact"></div>
-  <section class="section">
-    <div class="container">
-      <div class="cta-banner animate-on-scroll">
-        <span class="section-label">Get in Touch</span>
-        <h2>How to Buy or Contact Us</h2>
-        <p>Join 10,000+ coffee lovers who start their mornings with Cupper. Order through our store or visit us locally.</p>
-        <div class="cta-buttons">
-          <a href="products.html" class="btn btn-primary">☕ Order Now</a>
-          <a href="about.html#contact" class="btn btn-secondary">📍 Location</a>
-          <a href="mailto:hello@cuppercoffee.com" class="btn btn-secondary">✉️ hello@cuppercoffee.com</a>
+          <p>Free shipping on orders over $35. Express options available. From our roastery to your doorstep in 2-4
+            days.</p>
         </div>
       </div>
     </div>
@@ -93,59 +65,10 @@
 
   <script src="js/main.js"></script>
   <script>
-    // Featured Products (subset)
-    const FEATURED = [
-      {
-        id: 'bean-01', name: 'Ethiopian Yirgacheffe', category: 'beans',
-        price: 18.99, badge: 'Best Seller',
-        description: 'Bright and complex with notes of jasmine, lemon, and bergamot. Single-origin light roast.'
-      },
-      {
-        id: 'ground-01', name: 'Morning Ritual Blend', category: 'ground',
-        price: 13.99, badge: 'Popular',
-        description: 'Medium-grind blend optimized for drip brewers. Bold, bright, and energizing.'
-      },
-      {
-        id: 'drink-01', name: 'Classic Cold Brew', category: 'drinks',
-        price: 5.99, badge: 'Seasonal',
-        description: 'Slow-steeped for 18 hours. Smooth, refreshing, and naturally sweet. Ready to drink.'
-      },
-      {
-        id: 'acc-02', name: 'Cupper Travel Mug', category: 'accessories',
-        price: 24.99, badge: 'New',
-        description: 'Double-walled stainless steel. Keeps coffee hot for 8 hours. Matte black finish.'
-      },
-    ];
-
-    const catEmoji = { beans: '🫘', ground: '☕', drinks: '🥤', accessories: '⚙️' };
-
     document.addEventListener('DOMContentLoaded', () => {
-      // Render featured products
-      const grid = document.getElementById('featured-products');
-      if (grid) {
-        grid.innerHTML = FEATURED.map(p => `
-          <div class="card product-card animate-on-scroll">
-            <div style="position:relative;">
-              <div class="card-img" style="background:linear-gradient(135deg,#2e2924,#1a1714);display:flex;align-items:center;justify-content:center;font-size:3rem;">
-                ${catEmoji[p.category] || '☕'}
-              </div>
-              ${p.badge ? `<span class="product-badge">${p.badge}</span>` : ''}
-            </div>
-            <div class="card-body">
-              <h3>${p.name}</h3>
-              <p>${p.description}</p>
-              <div class="card-footer">
-                <span class="card-price">$${p.price.toFixed(2)}</span>
-                <button class="btn btn-primary btn-sm" onclick="addToCart(${JSON.stringify(p).replace(/"/g, '&quot;')})">Add to Cart</button>
-              </div>
-            </div>
-          </div>
-        `).join('');
-      }
-
-
       initScrollAnimations();
     });
   </script>
 </body>
+
 </html>
