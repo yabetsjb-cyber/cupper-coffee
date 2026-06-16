@@ -22,7 +22,7 @@ function renderNav() {
   const navHTML = `
     <nav id="site-nav">
       <div class="nav-logo-row">
-        <a href="index.html" class="nav-logo">☕ <span>Cupper</span></a>
+        <a href="index.html" class="nav-logo">☕ <span>YEBEREKET</span></a>
       </div>
       <div class="nav-tabs-row">
         <div class="nav-tabs">
@@ -58,9 +58,9 @@ function renderFooter() {
           <div>
             <h4 class="footer-heading">Contact</h4>
             <div class="footer-contact">
-              <div class="footer-contact-item">📍 123 Brew Street, Coffee District</div>
-              <div class="footer-contact-item">📞 +1 (555) 234-5678</div>
-              <div class="footer-contact-item">✉️ hello@cuppercoffee.com</div>
+              <div class="footer-contact-item">📍 Bole Ednamol</div>
+              <div class="footer-contact-item">📞 +251 9 10101010</div>
+              <div class="footer-contact-item">✉️ hello@yebereket.com</div>
               <div class="footer-contact-item">🕐 Mon-Sat: 7AM - 8PM</div>
             </div>
             <div class="social-links" style="margin-top: 1.5rem; display: flex; gap: 1rem;">
@@ -72,7 +72,7 @@ function renderFooter() {
           </div>
         </div>
         <div class="footer-bottom">
-          <p>© 2026 Cupper Coffee. All rights reserved.</p>
+          <p>© 2026 YEBEREKET Coffee. All rights reserved.</p>
           <div style="display:flex; gap:1.5rem;">
             <a href="#">Privacy Policy</a>
             <a href="#">Terms of Service</a>
