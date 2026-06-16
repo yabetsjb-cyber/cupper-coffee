@@ -70,17 +70,7 @@ function renderFooter() {
   const footerHTML = `
     <footer id="site-footer">
       <div class="container">
-        <div class="footer-grid">
-          <div class="footer-brand">
-            <div class="nav-logo">☕ <span>Cupper</span></div>
-            <p>Crafting exceptional coffee experiences since 2018. From bean to cup, every sip tells a story of passion and precision.</p>
-            <div class="social-links" style="margin-top: 1.5rem;">
-              <a href="#" class="social-link" aria-label="Facebook">f</a>
-              <a href="#" class="social-link" aria-label="Instagram">📷</a>
-              <a href="#" class="social-link" aria-label="Twitter">𝕏</a>
-              <a href="#" class="social-link" aria-label="TikTok">♪</a>
-            </div>
-          </div>
+        <div class="footer-grid" style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: var(--space-2xl);">
           <div>
             <h4 class="footer-heading">Contact</h4>
             <div class="footer-contact">
@@ -88,6 +78,12 @@ function renderFooter() {
               <div class="footer-contact-item">📞 +1 (555) 234-5678</div>
               <div class="footer-contact-item">✉️ hello@cuppercoffee.com</div>
               <div class="footer-contact-item">🕐 Mon-Sat: 7AM - 8PM</div>
+            </div>
+            <div class="social-links" style="margin-top: 1.5rem; display: flex; gap: 1rem;">
+              <a href="#" class="social-link" aria-label="Facebook">f</a>
+              <a href="#" class="social-link" aria-label="Instagram">📷</a>
+              <a href="#" class="social-link" aria-label="Twitter">𝕏</a>
+              <a href="#" class="social-link" aria-label="TikTok">♪</a>
             </div>
           </div>
         </div>
