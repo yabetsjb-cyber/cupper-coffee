@@ -25,10 +25,6 @@ function renderNav() {
         <a href="index.html" class="nav-logo">☕ <span>Cupper</span></a>
         <div class="nav-links">
           ${links.map(l => `<a href="${l.href}" class="${currentPage === l.href ? 'active' : ''}">${l.label}</a>`).join('')}
-          <a href="order.html" class="nav-cart" id="nav-cart-btn">
-            🛒 Cart
-            <span class="cart-badge" id="cart-badge">0</span>
-          </a>
         </div>
         <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu">
           <span></span><span></span><span></span>
@@ -36,7 +32,6 @@ function renderNav() {
       </div>
       <div class="nav-mobile" id="nav-mobile">
         ${links.map(l => `<a href="${l.href}">${l.label}</a>`).join('')}
-        <a href="order.html">🛒 Cart</a>
       </div>
     </nav>
   `;
@@ -68,8 +63,6 @@ function renderNav() {
       nav.classList.remove('scrolled');
     }
   });
-
-  updateCartBadge();
 }
 
 // ─── Footer ─────────────────────────────────────────────────
@@ -110,110 +103,6 @@ function renderFooter() {
   `;
 
   document.body.insertAdjacentHTML('beforeend', footerHTML);
-}
-
-// ─── Cart Utilities (localStorage) ──────────────────────────
-function getCart() {
-  try {
-    return JSON.parse(localStorage.getItem('cupperCart')) || [];
-  } catch {
-    return [];
-  }
-}
-
-function saveCart(cart) {
-  localStorage.setItem('cupperCart', JSON.stringify(cart));
-  updateCartBadge();
-}
-
-function addToCart(product) {
-  const cart = getCart();
-  const existing = cart.find(item => item.id === product.id);
-  if (existing) {
-    existing.qty += 1;
-  } else {
-    cart.push({ ...product, qty: 1 });
-  }
-  saveCart(cart);
-  showToast(`${product.name} added to cart!`);
-}
-
-function removeFromCart(productId) {
-  let cart = getCart();
-  cart = cart.filter(item => item.id !== productId);
-  saveCart(cart);
-}
-
-function updateCartQty(productId, delta) {
-  const cart = getCart();
-  const item = cart.find(i => i.id === productId);
-  if (item) {
-    item.qty += delta;
-    if (item.qty <= 0) {
-      removeFromCart(productId);
-      return;
-    }
-    saveCart(cart);
-  }
-}
-
-function getCartTotal() {
-  return getCart().reduce((sum, item) => sum + (item.price * item.qty), 0);
-}
-
-function getCartCount() {
-  return getCart().reduce((sum, item) => sum + item.qty, 0);
-}
-
-function updateCartBadge() {
-  const badge = document.getElementById('cart-badge');
-  if (!badge) return;
-  const count = getCartCount();
-  badge.textContent = count;
-  if (count > 0) {
-    badge.classList.add('visible');
-  } else {
-    badge.classList.remove('visible');
-  }
-}
-
-// ─── Toast Notification ─────────────────────────────────────
-function showToast(message) {
-  // Remove existing toast
-  const existing = document.querySelector('.toast');
-  if (existing) existing.remove();
-
-  const toast = document.createElement('div');
-  toast.className = 'toast';
-  toast.textContent = message;
-  toast.style.cssText = `
-    position: fixed;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%) translateY(20px);
-    background: linear-gradient(135deg, var(--color-accent), var(--color-gold));
-    color: #fff;
-    padding: 0.85rem 2rem;
-    border-radius: 50px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    z-index: 3000;
-    box-shadow: 0 8px 30px rgba(192, 112, 58, 0.4);
-    opacity: 0;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  `;
-  document.body.appendChild(toast);
-
-  requestAnimationFrame(() => {
-    toast.style.opacity = '1';
-    toast.style.transform = 'translateX(-50%) translateY(0)';
-  });
-
-  setTimeout(() => {
-    toast.style.opacity = '0';
-    toast.style.transform = 'translateX(-50%) translateY(20px)';
-    setTimeout(() => toast.remove(), 400);
-  }, 2500);
 }
 
 // ─── Scroll Animations ──────────────────────────────────────
