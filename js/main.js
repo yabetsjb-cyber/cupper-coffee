@@ -21,40 +21,24 @@ function renderNav() {
 
   const navHTML = `
     <nav id="site-nav">
-      <div class="nav-inner">
+      <div class="nav-logo-row">
         <a href="index.html" class="nav-logo">☕ <span>Cupper</span></a>
-        <div class="nav-links">
-          ${links.map(l => `<a href="${l.href}" class="${currentPage === l.href ? 'active' : ''}">${l.label}</a>`).join('')}
-        </div>
-        <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu">
-          <span></span><span></span><span></span>
-        </button>
       </div>
-      <div class="nav-mobile" id="nav-mobile">
-        ${links.map(l => `<a href="${l.href}">${l.label}</a>`).join('')}
+      <div class="nav-tabs-row">
+        <div class="nav-tabs">
+          ${links.map(l => `
+            <a href="${l.href}" class="nav-tab-item ${currentPage === l.href ? 'active' : ''}">
+              ${l.label}
+            </a>
+          `).join('')}
+        </div>
       </div>
     </nav>
   `;
 
   document.body.insertAdjacentHTML('afterbegin', navHTML);
 
-  // Hamburger toggle
-  const hamburger = document.getElementById('nav-hamburger');
-  const mobileNav = document.getElementById('nav-mobile');
-  hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('open');
-    mobileNav.classList.toggle('open');
-  });
-
-  // Close mobile nav on link click
-  mobileNav.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      hamburger.classList.remove('open');
-      mobileNav.classList.remove('open');
-    });
-  });
-
-  // Nav scroll effect
+  // Nav scroll effect (miniaturize slightly on scroll)
   window.addEventListener('scroll', () => {
     const nav = document.getElementById('site-nav');
     if (window.scrollY > 50) {
