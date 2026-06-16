@@ -92,16 +92,7 @@ function renderFooter() {
             </div>
           </div>
           ${isHome ? '' : `
-          <div>
-            <h4 class="footer-heading">Quick Links</h4>
-            <div class="footer-links">
-              <a href="index.html">Home</a>
-              <a href="about.html">About Us</a>
-              <a href="blog.html">Blog</a>
-              <a href="reviews.html">Reviews</a>
-              <a href="order.html">My Cart</a>
-            </div>
-          </div>
+          
           `}
           <div>
             <h4 class="footer-heading">Contact</h4>
