@@ -74,9 +74,6 @@ function renderNav() {
 
 // ─── Footer ─────────────────────────────────────────────────
 function renderFooter() {
-  const currentPage = getCurrentPage();
-  const isHome = currentPage === 'index.html';
-
   const footerHTML = `
     <footer id="site-footer">
       <div class="container">
@@ -91,9 +88,6 @@ function renderFooter() {
               <a href="#" class="social-link" aria-label="TikTok">♪</a>
             </div>
           </div>
-          ${isHome ? '' : `
-          
-          `}
           <div>
             <h4 class="footer-heading">Contact</h4>
             <div class="footer-contact">
