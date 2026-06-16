@@ -31,34 +31,6 @@ const REVIEWS = [
         date: 'March 2026',
         text: 'I visited the café for the first time and was blown away. The atmosphere is cozy, the latte art is beautiful, and the baristas really know their craft. 10/10!',
     },
-    {
-        name: 'Amara T.',
-        initials: 'AT',
-        rating: 5,
-        date: 'March 2026',
-        text: 'As an Ethiopian, I\'m particular about my coffee. Cupper\'s Yirgacheffe is authentic and roasted to perfection. It reminds me of home. Thank you!',
-    },
-    {
-        name: 'David L.',
-        initials: 'DL',
-        rating: 4,
-        date: 'February 2026',
-        text: 'The Sumatra Mandheling is incredibly rich and complex. I use the manual grinder from Cupper — it\'s built like a tank. Worth every penny.',
-    },
-    {
-        name: 'Priya S.',
-        initials: 'PS',
-        rating: 5,
-        date: 'January 2026',
-        text: 'Subscribed to their monthly bean box. Every month is a delightful surprise. The attention to sourcing and freshness is evident in every cup.',
-    },
-    {
-        name: 'Tom W.',
-        initials: 'TW',
-        rating: 5,
-        date: 'January 2026',
-        text: 'The Vanilla Caramel Mocha is absolutely divine. It\'s like dessert in a cup. My go-to afternoon treat. Cupper has ruined all other coffee shops for me!',
-    },
 ];
 
 // ─── Render Reviews ─────────────────────────────────────────
